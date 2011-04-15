@@ -32,7 +32,9 @@ class tfidf:
         docDict = collections.defaultdict(int)
         for w in listOfWords:
             docDict [w] += 1.0
-            self.corpusDict [w] += 1.0
+
+        for w in docDict:
+            self.corpusDict [w] += docDict[w]
                 
         # normalizing the dictionary
         length = float (len (listOfWords))
