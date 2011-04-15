@@ -8,7 +8,11 @@ Date: Dec 2010
 
 The simplest TF-IDF library imaginable.
 
-Add your documents as two-element lists [docname, [list_of_words_in_the_document] ] with addDocument (docname, list_of_words).  Get a list of all the [docname, similarity_score] pairs relative to a document by calling similarities ( [list_of_words] ).
+Add your documents as two-element lists 
+[docname, [list_of_words_in_the_document] ] with 
+addDocument (docname, list_of_words).  Get a list of all the 
+[docname, similarity_score] pairs relative to a document by 
+calling similarities ( [list_of_words] ).
 
 See README.txt for a usage example.
 """
@@ -44,7 +48,8 @@ class tfidf:
         self.documents.append ( [docName, docDict] )
         
     def similarities (self, listOfWords):
-        """Returns a list of all the [docname, similarity_score] pairs relative to a list of words."""
+        """Returns a list of all the [docname, similarity_score] pairs
+        relative to a list of words."""
         
         # building the query dictionary
         queryDict = {}
