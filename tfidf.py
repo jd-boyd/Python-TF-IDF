@@ -39,7 +39,7 @@ class tfidf:
         # normalizing the dictionary
         length = float (len (listOfWords))
         for k in docDict:
-            docDict [k] /= / length
+            docDict [k] /= length
         
         # add the normalized document to the corpus
         self.documents.append ( [docName, docDict] )
