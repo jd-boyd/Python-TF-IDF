@@ -75,3 +75,19 @@ class tfidf:
             sims.append ([doc [0], score])
             
         return sims
+
+if __name__=="__main__":
+    import unittest
+    class TestTFIDF(unittest.TestCase):
+        def setUp(self):
+            self.table = tfidf ()
+        def test_add(self):
+            self.table.addDocument ("foo", ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel"])
+            self.table.addDocument ("bar", ["alpha", "bravo", "charlie", "india", "juliet", "kilo"])
+            self.table.addDocument ("baz", ["kilo", "lima", "mike", "november"])
+
+            sim_results=self.table.similarities (["alpha", "bravo", "charlie"])
+            sim_expect=[['foo', 0.6875], ['bar', 0.75], ['baz', 0.0]]
+            self.assertEqual(sim_results, sim_expect)
+
+    unittest.main()
